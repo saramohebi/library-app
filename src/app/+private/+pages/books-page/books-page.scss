@@ -1,0 +1,33 @@
+$primarybg:#006d77;
+$secondcolor:#cdc1b3;
+$bodytextcolor:#1f2222;
+$links:#fffefd;
+table{
+    width: 100%;
+    border-collapse: collapse;
+    tr{
+        border-bottom: 1px solid gray;
+    }
+    tr:nth-of-type(2n+1){
+        background-color: rgb(222, 234, 234);
+    }
+    td,th{
+        text-align: right;
+        padding: 0.3em;
+    }
+    th{
+        background-color: gray;
+        color: white;
+    }
+    td:last-of-type{
+        text-align: left;
+    }
+}
+button{
+    background-color:$primarybg ;
+    color: $links;
+    padding: 0.2em 0.4em;
+    border: none;
+    border-radius: 0.3em;
+    margin: 0.2em;
+}
