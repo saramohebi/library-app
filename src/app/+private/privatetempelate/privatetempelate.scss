@@ -1,0 +1,31 @@
+$primarybg:#006d77;
+$secondcolor:#cdc1b3;
+$bodytextcolor:#1f2222;
+$buttoncolor:#edef49;
+$links:#fffefd;
+.sidebar{
+    background-color:$secondcolor ;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 0.2em;
+    a{
+        cursor: pointer;
+        color: $bodytextcolor;
+        text-decoration: none;
+        display: block;
+        padding: 0.3em 0.5em;
+        border-radius: 0.3em;
+    }
+    a:hover{
+        background-color: $primarybg;
+        color: $links;
+    }
+}
+.content{
+    margin-right: 200px;
+    padding: 0.4em;
+}
