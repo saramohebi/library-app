@@ -1,1 +1,65 @@
-<p>members-page works!</p>
+@if(action=='list'){
+<div>
+    <button (click)="add()">افزودن</button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>شناسه</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>نام کتاب</th>
+            <th>قیمت</th>
+            <th>تاریخ</th>
+            <th>وضعیت</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of users; track $index) {
+        <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.family}}</td>
+            <td>{{item.bookname}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.status}}</td>
+            <td>
+                <button>ویرایش</button>
+                <button>حذف</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+}
+@else {
+<form class="form" (ngSubmit)="save()">
+    <div>
+        <input [(ngModel)]="item.id" id="id" name="id" type="text" placeholder=" شناسه عضویت">
+    </div>
+    <div>
+        <input [(ngModel)]="item.name" id="name" name="name" type="text" placeholder="نام ">
+    </div>
+    <div>
+        <input [(ngModel)]="item.family" id="family" name="family" type="text" placeholder="نام خانوادگی">
+    </div>
+    <div>
+        <input [(ngModel)]="item.bookname" id="bookname" name="bookname" type="text" placeholder="نام کتاب">
+    </div>
+    <div>
+        <input [(ngModel)]="item.price" id="price" name="price" type="number" placeholder="قیمت">
+    </div>
+       <div>
+        <input [(ngModel)]="item.date" id="date" name="date" type="number" placeholder="تاریخ">
+    </div>
+       <div>
+        <input [(ngModel)]="item.status" id="status" name="status" type="number" placeholder="وضعیت">
+    </div>
+    <div>
+        <button type="submit">تایید</button>
+        <button (click)="cancel()" type="button">انصراف</button>
+    </div>
+</form>
+}

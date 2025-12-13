@@ -1,5 +1,5 @@
 $primarybg:#006d77;
-$secondcolor:#cdc1b3;
+$secondcolor:#ffead4;
 $bodytextcolor:#1f2222;
 $links:#fffefd;
 table{
@@ -9,7 +9,7 @@ table{
         border-bottom: 1px solid gray;
     }
     tr:nth-of-type(2n+1){
-        background-color: rgb(222, 234, 234);
+        background-color: rgb(214, 214, 214);
     }
     td,th{
         text-align: right;
@@ -24,10 +24,29 @@ table{
     }
 }
 button{
-    background-color:$primarybg ;
-    color: $links;
-    padding: 0.2em 0.4em;
+    background-color:$secondcolor ;
+    color: $bodytextcolor;
+    padding: 0.4em 0.4em;
     border: none;
     border-radius: 0.3em;
-    margin: 0.2em;
+    margin: 0.3em;
+}
+button:hover{
+    cursor: pointer;
+}
+.form{
+    display:flex;
+    background-color: $secondcolor;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    border-radius: 0.3em;
+    input{
+        padding: 0.3em;
+        margin: 0.2em;
+    }
+    button{
+        background-color:$primarybg;
+        color: $links;
+    }
 }

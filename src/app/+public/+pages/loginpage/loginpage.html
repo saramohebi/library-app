@@ -1,8 +1,8 @@
-<div>
+<div class="login">
     <form (ngSubmit)="check()">
         <div>
             <label for="username">نام کاربری</label>
-            <input [(ngModel)]="loginForm.username" id="username" name="username" type="text" placeholder="نام کاربری را وارد کنید ">
+            <input  [(ngModel)]="loginForm.username" id="username" name="username" type="text" placeholder="نام کاربری را وارد کنید ">
         </div>
          <div>
             <label for="password">گذرواژه</label>
@@ -16,7 +16,7 @@
             <button [disabled]="loginForm.username== '' || loginForm.password=='' "  type="submit"> ورود</button>
         </div>
         @if(message!=''){
-            <div>
+            <div class="error">
                 {{message}}
             </div>
         }

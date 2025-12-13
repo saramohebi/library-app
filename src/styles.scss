@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+$primarybg:#006d77;
+$textcolor:#ffffff;
 body{
     margin: 0;
+    background-color: $primarybg;
+    color:$textcolor;
 }
 @font-face{
     font-family: Yekanbakh;

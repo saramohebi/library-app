@@ -1,0 +1,55 @@
+$primarybg:#006d77;
+$secondcolor:#ffead4;
+$bodytextcolor:#1f2222;
+$links:#003d3e;
+:host{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+.login{
+    background-color: $secondcolor;
+    color: $links;
+    padding: 1.3em;
+    border: 1 px solid #02343f;
+    border-radius: 0.3em;
+    box-shadow: 0 0 0.8em 0.2em rgb(177, 169, 169);
+    width: 230px;
+    div{     
+        margin: 0.5em 0;
+        input[type=text],input[type=password]{
+         width: 100%;
+         box-sizing: border-box;
+         padding: 0.5em;
+         border-radius: 0.3em;
+        }
+    }
+ 
+    button{
+        width: 100%;
+        background-color: $primarybg;
+        color: white;
+        padding: 0.4em;
+        border: none;
+        border-radius: 0.3em;
+    }
+    button[disabled]{
+        background-color:  silver;
+        color:white;
+    }
+    button[disabled]:hover{
+        cursor: not-allowed;
+    }
+    button:hover{
+        cursor: pointer;
+    }
+    .error{
+        background-color: rgba(203, 11, 24, 0.529);
+        color: white;
+        font-size: small;
+        padding: 0.4em;
+        border-radius: 0.3em;
+        text-align: center;
+     }
+}

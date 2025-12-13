@@ -1,14 +1,13 @@
 $primarybg:#006d77;
-$secondcolor:#cdc1b3;
+$secondcolor:#ffead4;
 $bodytextcolor:#1f2222;
-$buttoncolor:#edef49;
 $links:#fffefd;
 .sidebar{
     background-color:$secondcolor ;
     position: fixed;
     right: 0;
     top: 0;
-    width: 150px;
+    width: 185px;
     height: 100vh;
     box-sizing: border-box;
     padding: 0.2em;
@@ -27,5 +26,5 @@ $links:#fffefd;
 }
 .content{
     margin-right: 200px;
-    padding: 0.4em;
+    padding: 0.2em;
 }
