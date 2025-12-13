@@ -5,7 +5,7 @@ import { BookItem } from './books-page';
   providedIn: 'root',
 })
 export class BooksService {
-   private data: BookItem[] = [{ id: 1, title: 'sara', writer: 'shams', publisher: 'man', price: 1000 }];
+   private data: BookItem[] = [{ id: 1, title: 'طراحی وب', writer: 'رضا بهرامی', publisher: 'محمود حسینی', price: 12000 }];
    add(book:BookItem) { //Create
     this.data.push(book);
 }
