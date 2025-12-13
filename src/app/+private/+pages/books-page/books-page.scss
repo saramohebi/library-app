@@ -1,7 +1,11 @@
-$primarybg:#006d77;
+$primarybg:#f7f8fa;
+$secondcolor:#2b2f4a;
+$bodytextcolor:#f5eded;
+$links:#4a6c82;
+/*$primarybg:#006d77;
 $secondcolor:#ffead4;
 $bodytextcolor:#1f2222;
-$links:#fffefd;
+$links:#fffefd;*/
 table{
     width: 100%;
     border-collapse: collapse;
@@ -16,7 +20,7 @@ table{
         padding: 0.3em;
     }
     th{
-        background-color: gray;
+        background-color: #4a6c82;
         color: white;
     }
     td:last-of-type{
@@ -33,6 +37,8 @@ button{
 }
 button:hover{
     cursor: pointer;
+    background-color: $links;
+    color: $bodytextcolor;
 }
 .form{
     display:flex;
@@ -49,4 +55,9 @@ button:hover{
         background-color:$primarybg;
         color: $links;
     }
+    button:hover{
+    cursor: pointer;
+    background-color:$links;
+    color: $primarybg;
+}
 }

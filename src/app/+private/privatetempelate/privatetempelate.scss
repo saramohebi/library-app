@@ -1,7 +1,7 @@
-$primarybg:#006d77;
-$secondcolor:#ffead4;
-$bodytextcolor:#1f2222;
-$links:#fffefd;
+$primarybg:#f7f8fa;
+$secondcolor:#2b2f4a;
+$bodytextcolor:#f5eded;
+$links:#3bafda;
 .sidebar{
     background-color:$secondcolor ;
     position: fixed;
@@ -20,7 +20,7 @@ $links:#fffefd;
         border-radius: 0.3em;
     }
     a:hover{
-        background-color: $primarybg;
+        background-color: $bodytextcolor;
         color: $links;
     }
 }

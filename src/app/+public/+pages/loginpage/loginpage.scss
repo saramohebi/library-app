@@ -1,7 +1,7 @@
-$primarybg:#006d77;
-$secondcolor:#ffead4;
-$bodytextcolor:#1f2222;
-$links:#003d3e;
+$primarybg:#f7f8fa;
+$secondcolor:#2b2f4a;
+$bodytextcolor:#f5eded;
+$links:#4a6c82;
 :host{
     display: flex;
     justify-content: center;
@@ -9,8 +9,8 @@ $links:#003d3e;
     min-height: 60vh;
 }
 .login{
-    background-color: $secondcolor;
-    color: $links;
+    background-color: $primarybg;
+    color: $secondcolor;
     padding: 1.3em;
     border: 1 px solid #02343f;
     border-radius: 0.3em;
@@ -28,7 +28,7 @@ $links:#003d3e;
  
     button{
         width: 100%;
-        background-color: $primarybg;
+        background-color: $secondcolor;
         color: white;
         padding: 0.4em;
         border: none;
@@ -43,6 +43,8 @@ $links:#003d3e;
     }
     button:hover{
         cursor: pointer;
+        background-color: $links;
+        color: $bodytextcolor;
     }
     .error{
         background-color: rgba(203, 11, 24, 0.529);
