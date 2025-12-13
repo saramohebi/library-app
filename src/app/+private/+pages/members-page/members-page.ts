@@ -28,6 +28,15 @@ export class MembersPage implements OnInit {
     this.users=this.membersService.list();
   }
   add() {
+    this.item={
+    id:0,
+    name:'',
+    family:'',
+    bookname:'',
+    price:0,
+    date:'',
+    status:''
+    }
     this.action='add';
 }
 save() {

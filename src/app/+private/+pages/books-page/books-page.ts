@@ -1,6 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { BooksService } from './books-service';
 import { FormsModule } from '@angular/forms';
+import { form } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-books-page',
@@ -27,6 +28,13 @@ export class BooksPage implements OnInit {
     this.data=this.booksService.list();
   }
   add() {
+    this.item={
+    id:0,
+    title:'',
+    writer:'',
+    publisher:'',
+    price:0
+    }
     this.action='add';
 }
 save() {

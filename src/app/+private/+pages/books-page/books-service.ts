@@ -5,6 +5,9 @@ import { BookItem } from './books-page';
   providedIn: 'root',
 })
 export class BooksService {
+   clear() {
+     throw new Error('Method not implemented.');
+   }
    private data: BookItem[] = [{ id: 1, title: 'طراحی وب', writer: 'رضا بهرامی', publisher: 'محمود حسینی', price: 12000 },
       { id: 2, title: 'پایگاه داده  ', writer: 'مریم نظری', publisher: 'محمود حسینی', price: 8000 },
       { id: 3, title: 'ریاضیات ', writer: 'علی مهربانی', publisher: 'مهدی الماسی', price: 5000 },
