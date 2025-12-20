@@ -26,8 +26,8 @@
             <td>{{item.date}}</td>
             <td>{{item.status}}</td>
             <td>
-                <button>ویرایش</button>
-                <button>حذف</button>
+                <button (click)="edit(item)">ویرایش</button>
+                <button (click)="remove(item)" >حذف</button>
             </td>
         </tr>
     }
@@ -35,27 +35,32 @@
 </table>
 }
 @else {
+      @if (action=='remove') {
+    <div class="alert">
+        آیا از حذف این کتاب اطمینان دارید؟ 
+    </div>
+    }
 <form class="form" (ngSubmit)="save()">
     <div>
-        <input [(ngModel)]="item.id" id="id" name="id" type="text" placeholder=" شناسه عضویت">
+        <input [(ngModel)]="item.id" [disabled]="action=='edit'|| action=='remove'" id="id" name="id" type="text" placeholder=" شناسه عضویت">
     </div>
     <div>
-        <input [(ngModel)]="item.name" id="name" name="name" type="text" placeholder="نام ">
+        <input [(ngModel)]="item.name" [disabled]="action=='remove'" id="name" name="name" type="text" placeholder="نام ">
     </div>
     <div>
-        <input [(ngModel)]="item.family" id="family" name="family" type="text" placeholder="نام خانوادگی">
+        <input [(ngModel)]="item.family" [disabled]="action=='remove'" id="family" name="family" type="text" placeholder="نام خانوادگی">
     </div>
     <div>
-        <input [(ngModel)]="item.bookname" id="bookname" name="bookname" type="text" placeholder="نام کتاب">
+        <input [(ngModel)]="item.bookname" [disabled]="action=='remove'" id="bookname" name="bookname" type="text" placeholder="نام کتاب">
     </div>
     <div>
-        <input [(ngModel)]="item.price" id="price" name="price" type="number" placeholder="قیمت">
+        <input [(ngModel)]="item.price" [disabled]="action=='remove'" id="price" name="price" type="number" placeholder="قیمت">
     </div>
        <div>
-        <input [(ngModel)]="item.date" id="date" name="date" type="text" placeholder="تاریخ">
+        <input [(ngModel)]="item.date" [disabled]="action=='remove'" id="date" name="date" type="text" placeholder="تاریخ">
     </div>
        <div>
-        <input [(ngModel)]="item.status" id="status" name="status" type="text" placeholder="وضعیت">
+        <input [(ngModel)]="item.status" [disabled]="action=='remove'" id="status" name="status" type="text" placeholder="وضعیت">
     </div>
     <div>
         <button type="submit">تایید</button>

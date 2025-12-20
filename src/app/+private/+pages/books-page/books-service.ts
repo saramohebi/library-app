@@ -20,10 +20,16 @@ export class BooksService {
    list(){ //Read
     return [...this.data];
    }
-   update(){ //Update
-
+   update(book:BookItem){ //Update
+    const  index=this.data.findIndex(b=>b.id==book.id)
+    if(index!=-1){
+      this.data[index].title=book.title;
+      this.data[index].writer=book.writer;
+      this.data[index].publisher=book.publisher;
+      this.data[index].price=book.price;
+    }
    }
-   remove(){ //Delete
-
+   remove(book:BookItem){ //Delete
+      this.data=this.data.filter(m=>m.id!=book.id);
    }
 }

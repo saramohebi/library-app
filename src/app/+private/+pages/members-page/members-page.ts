@@ -16,11 +16,9 @@ export class MembersPage implements OnInit {
   users: MemberItem[] = [];
   action:string='list';
   item:MemberItem={
-    id:0,
     name:'',
     family:'',
     bookname:'',
-    price:0,
     date:'',
     status:''
   };
@@ -29,33 +27,47 @@ export class MembersPage implements OnInit {
   }
   add() {
     this.item={
-    id:0,
     name:'',
     family:'',
     bookname:'',
-    price:0,
     date:'',
     status:''
     }
     this.action='add';
 }
+  edit(users:MemberItem) {
+    this.item={...users};
+    this.action='edit';
+}
 save() {
-    this.membersService.add(this.item);
+    if(this.action=='add'){
+      this.membersService.add(this.item);
+    }
+    else if(this.action=='edit'){
+      this.membersService.update(this.item);
+    }
+    else if(this.action=='remove'){
+      this.membersService.remove(this.item);
+    }    
     this.refreshusers();
     this.action='list';
 }
 cancel() {
     this.action='list';
 }
+remove(users:MemberItem) {
+    this.item={...users};
+    this.action='remove';
+}
 
 }
 
 export interface MemberItem {
-  id: number;
+  id?: number;
   name: string;
   family: string;
   bookname: string;
-  price: number;
+  price?: number;
   date:string;
   status:string;
 }

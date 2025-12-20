@@ -13,3 +13,12 @@ body{
 *{
     font-family: Yekanbakh;
 }
+.alert{
+    background-color: rgb(247, 190, 190);
+    color: $textcolor;
+    border: 1px solid lightcoral;
+    border-radius: 0.4em;
+    padding: 0.4em;
+    margin: 0.4em;
+    text-align: center;
+}
