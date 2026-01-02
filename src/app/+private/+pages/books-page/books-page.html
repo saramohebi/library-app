@@ -1,61 +1,26 @@
-@if(action=='list'){
-<div>
-    <button (click)="add()">افزودن</button>
-</div>
-<table>
-    <thead>
-        <tr>
-            <th>شناسه</th>
-            <th>عنوان</th>
-            <th>نویسنده</th>
-            <th>ناشر</th>
-            <th>قیمت</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (book of data; track $index) {
-        <tr>
-            <td>{{book.id}}</td>
-            <td>{{book.title}}</td>
-            <td>{{book.writer}}</td>
-            <td>{{book.publisher}}</td>
-            <td>{{book.price}}</td>
-            <td>
-                <button (click)="edit(book)">ویرایش</button>
-                <button (click)="remove(book)">حذف</button>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
-}
-@else {
-    @if (action=='remove') {
-    <div class="alert">
-        آیا از حذف این کتاب اطمینان دارید؟ 
-    </div>
-    }
- 
-<form class="form" (ngSubmit)="save()">
+<my-crud
+[mystate]="state" 
+[columns]="booksColumn"
+[mydata]="data"
+(onCancel)="cancel()" 
+(onAdd)="add()"
+(onEdit)="edit($event)"
+(onRemove)="remove($event)"
+(onSave)="save()"
+>
     <div>
-        <input [(ngModel)]="item.id" [disabled]="action=='edit'|| action=='remove'" id="id" name="id" type="text" placeholder="شناسه">
+        <input [(ngModel)]="item.id" [disabled]="state=='edit'|| state=='remove'" id="id" name="id" type="text" placeholder="شناسه">
     </div>
     <div>
-        <input [(ngModel)]="item.title" [disabled]="action=='remove'" id="title" name="title" type="text" placeholder="عنوان">
+        <input [(ngModel)]="item.title" [disabled]="state=='remove'" id="title" name="title" type="text" placeholder="عنوان">
     </div>
     <div>
-        <input [(ngModel)]="item.writer" [disabled]="action=='remove'" id="writer" name="writer" type="text" placeholder="نویسنده">
+        <input [(ngModel)]="item.writer" [disabled]="state=='remove'" id="writer" name="writer" type="text" placeholder="نویسنده">
     </div>
     <div>
-        <input [(ngModel)]="item.publisher" [disabled]="action=='remove'" id="publisher" name="publisher" type="text" placeholder="ناشر">
+        <input [(ngModel)]="item.publisher" [disabled]="state=='remove'" id="publisher" name="publisher" type="text" placeholder="ناشر">
     </div>
     <div>
-        <input [(ngModel)]="item.price" [disabled]="action=='remove'" id="price" name="price" type="number" placeholder="قیمت">
+        <input [(ngModel)]="item.price" [disabled]="state=='remove'" id="price" name="price" type="number" placeholder="قیمت">
     </div>
-    <div>
-        <button type="submit">تایید</button>
-        <button (click)="cancel()" type="button">انصراف</button>
-    </div>
-</form>
-}
+</my-crud>
