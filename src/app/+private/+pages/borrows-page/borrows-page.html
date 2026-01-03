@@ -9,6 +9,9 @@
 (onSave)="save()"
 >
     <div>
+        <input [(ngModel)]="item.id" [disabled]="state=='edit'|| state=='remove'" id="id" name="id" type="text" placeholder=" شناسه عضویت">
+    </div>
+    <div>
          <input [(ngModel)]="item.name" [disabled]="state=='remove'" id="name" name="name" type="text" placeholder="نام ">
     </div>
     <div>

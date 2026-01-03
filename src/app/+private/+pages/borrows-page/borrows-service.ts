@@ -6,13 +6,14 @@ import { borrowsItem } from './borrows-page';
   providedIn: 'root',
 })
 export class BorrowsService extends BaseService<borrowsItem> {
-     override data: borrowsItem[] = [{name:'سارا', family:'محب',bookName:'مدارمنطقی',date:'شهریور',status:'منتظر پرداخت'},
-      {name:'پرناز', family:'خرمی',bookName:'ریاضیات',date:'مهر',status:'پرداخت شده'},
-      {name:'آسمان', family:'شمس',bookName:' پایگاه داده',date:'بهمن',status:'درصف بررسی'},
-      {name:'نیایش', family:'امینی',bookName:'ساختمان گسسته',date:'فروردین',status:'در صف بررسی'},
-      {name:'آزیتا', family:'روحانی',bookName:'طراحی وب',date:'تیر',status:' پرداخت شده'},
+     override data: borrowsItem[] = [{id: 1,name:'سارینا', family:'محب',bookName:'مدارمنطقی',date:'شهریور',status:'منتظر پرداخت'},
+      {id: 2,name:'پرناز', family:'خرمی',bookName:'ریاضیات',date:'مهر',status:'پرداخت شده'},
+      {id: 3,name:'آسمان', family:'شمس',bookName:' پایگاه داده',date:'بهمن',status:'درصف بررسی'},
+      {id: 4,name:'نیایش', family:'امینی',bookName:'ساختمان گسسته',date:'فروردین',status:'در صف بررسی'},
+      {id: 5,name:'آزیتا', family:'روحانی',bookName:'طراحی وب',date:'تیر',status:' پرداخت شده'},
      ];
      override update(destination: borrowsItem, source: borrowsItem): void {
+        destination.id=source.id;
         destination.name=source.name;
         destination.family=source.family;
         destination.bookName=source.bookName;

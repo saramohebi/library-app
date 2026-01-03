@@ -35,6 +35,7 @@ export class BorrowsPage extends BaseCrudPage<borrowsItem> implements OnInit {
     }
   }
   borrowsColumn:Column[]=[
+    {field:'id',title:'شناسه عضویت'},
     {field:'name',title:'نام '},
     {field:'family',title:'نام خانوادگی'},
     {field:'bookName',title:'نام کتاب'},
