@@ -1,1 +1,26 @@
-<p>borrows-page works!</p>
+<my-crud
+[mystate]="state" 
+[columns]="borrowsColumn"
+[mydata]="data"
+(onCancel)="cancel()" 
+(onAdd)="add()"
+(onEdit)="edit($event)"
+(onRemove)="remove($event)"
+(onSave)="save()"
+>
+    <div>
+         <input [(ngModel)]="item.name" [disabled]="state=='remove'" id="name" name="name" type="text" placeholder="نام ">
+    </div>
+    <div>
+        <input [(ngModel)]="item.family" [disabled]="state=='remove'" id="family" name="family" type="text" placeholder="نام خانوادگی">
+    </div>
+    <div>
+        <input [(ngModel)]="item.bookName" [disabled]="state=='remove'" id="bookname" name="bookname" type="text" placeholder="نام کتاب">
+    </div>
+    <div>
+        <input [(ngModel)]="item.date" [disabled]="state=='remove'" id="date" name="date" type="text" placeholder="تاریخ">
+    </div>
+    <div>
+        <input [(ngModel)]="item.status" [disabled]="state=='remove'" id="status" name="status" type="text" placeholder="وضعیت">
+    </div>
+</my-crud>

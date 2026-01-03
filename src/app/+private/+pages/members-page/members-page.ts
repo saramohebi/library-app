@@ -18,7 +18,6 @@ export class MembersPage extends BaseCrudPage<MemberItem> implements OnInit {
       name:'',
       family:'',
       bookname:'',
-      status:'',
       date:''
     }
    this.refreshData();
@@ -29,7 +28,6 @@ export class MembersPage extends BaseCrudPage<MemberItem> implements OnInit {
       name:'',
       family:'',
       bookname:'',
-      status:'',
       date:''
     }
   }
@@ -40,7 +38,6 @@ export class MembersPage extends BaseCrudPage<MemberItem> implements OnInit {
     {field:'bookname',title:'نام کتاب'},
     {field:'price',title:'قیمت'},
     {field:'date',title:'تاریخ'},
-    {field:'status',title:'وضعیت'},
   ]
 }
 
@@ -50,5 +47,4 @@ export interface MemberItem extends thing{
   bookname: string;
   price?: number;
   date:string;
-  status:string;
 }
